@@ -30,6 +30,7 @@ const AddNewExam = () => {
   const [loading, setLoading] = useState(false);
   const [jsonResponse, setJsonResponse] = useState([]);
   const { user } = useUser();
+  const router = useRouter();
 
   const onSubmit = async (e) => {
     setLoading(true);
@@ -59,7 +60,7 @@ const AddNewExam = () => {
       console.log(resp)
       if(resp){
           setOpenDialog(false);
-          // router.push('/dashboard/interview/'+resp[0]?.examId)
+          router.push('/dashboard/exam/'+resp[0]?.examId)
       }
     }
     else {
